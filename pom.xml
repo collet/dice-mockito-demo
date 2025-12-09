@@ -7,11 +7,11 @@
     <version>0.1-SNAPSHOT</version>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>17</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <junit.bom.version>5.10.1</junit.bom.version>
+        <project.build.sourceEncoding>UTF-8
+        </project.build.sourceEncoding> <!-- CHANGE ME IF NEEDED, other : ISO-8859-1 -->
+        <java.version>21</java.version>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <junit.bom.version>5.14.1</junit.bom.version>
         <mockito.bom.version>5.7.0</mockito.bom.version>
     </properties>
 
@@ -49,15 +49,14 @@
 
     <build>
         <plugins>
-            <!-- JUnit 5.10.1 requires maven surefire 3.2.1 -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.14.1</version>
             </plugin>
 
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.1</version>
+                <version>3.5.4</version>
             </plugin>
         </plugins>
     </build>
