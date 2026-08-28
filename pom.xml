@@ -9,7 +9,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8
         </project.build.sourceEncoding> <!-- CHANGE ME IF NEEDED, other : ISO-8859-1 -->
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <junit.bom.version>5.14.1</junit.bom.version>
         <mockito.bom.version>5.20.0</mockito.bom.version>
@@ -52,11 +52,11 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.1</version>
+                <version>3.15.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.4</version>
+                <version>3.5.6</version>
                 <configuration>
                 <argLine>
                     @{argLine} -javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.bom.version}/mockito-core-${mockito.bom.version}.jar
