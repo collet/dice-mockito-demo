@@ -4,8 +4,8 @@ import java.util.Optional;
 
 public class Game {
 
-    private Player left;
-    private Player right;
+    private final Player left;
+    private final Player right;
 
     public Game(Player left, Player right) {
         this.left = left;

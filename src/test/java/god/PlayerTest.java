@@ -13,20 +13,20 @@ public class PlayerTest {
     Player p;
     
     @Test
-    public void lastValueNotInitialized() {
+    void lastValueNotInitialized() {
         p = new Player("John Doe", new Dice(new Random()));
         assertFalse(p.getLastValue().isPresent());
     }
 
     @Test
-    public void lastValueInitialized() {
+    void lastValueInitialized() {
         p = new Player("John Doe", new Dice(new Random()));
         p.play();
         assertTrue(p.getLastValue().isPresent());
     }
 
     @Test
-    public void throwDiceOnlyTwice() {
+    void throwDiceOnlyTwice() {
         Dice d = mock(Dice.class);
         p = new Player("John Doe", d);
         p.play();
@@ -34,17 +34,17 @@ public class PlayerTest {
     }
     
     @Test
-    public void keepTheMaximum() {
+    void keepTheMaximum() {
         Dice d = mock(Dice.class);
         p = new Player("John Doe", d);
 
         when(d.roll()).thenReturn(2,5);
         p.play();
-        assertEquals(p.getLastValue().get(), new PlayResult(5));
+        assertEquals(new PlayResult(5), p.getLastValue().get());
         
         when(d.roll()).thenReturn(6).thenReturn(1);
         p.play();
-        assertEquals(p.getLastValue().get(), new PlayResult(6));
+        assertEquals(new PlayResult(6), p.getLastValue().get());
         
     }
     

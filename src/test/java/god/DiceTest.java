@@ -20,7 +20,7 @@ public class DiceTest {
 	@Mock Random trickedRandom = mock(Random.class);
 
 	@Test
-	public void rollReturnsAValue() {
+	void rollReturnsAValue() {
 		theDice = new Dice(new Random());
 		for (int i = 0; i < 100; i++) {
 			int result = theDice.roll();
@@ -30,22 +30,17 @@ public class DiceTest {
 	}
 
 	@Test
-	public void identifyBadValuesGreaterThanNumberOfFaces() {
+	void identifyBadValuesGreaterThanNumberOfFaces() {
 		when(trickedRandom.nextInt(anyInt())).thenReturn(7);
 		theDice = new Dice(trickedRandom);
-		assertThrows(RuntimeException.class, () -> {
-			theDice.roll();
-		} );
+		assertThrows(RuntimeException.class, () -> theDice.roll());
 	}
 
 	@Test
-    public void identifyBadValuesLesserThanOne() {
+    void identifyBadValuesLesserThanOne() {
         when(trickedRandom.nextInt(eq(Dice.FACES))).thenReturn(-1);
         theDice = new Dice(trickedRandom);
-		assertThrows(RuntimeException.class, () -> {
-			theDice.roll();
-		} );
-    }
-	
+		assertThrows(RuntimeException.class, () -> theDice.roll());
+	}
 
 }

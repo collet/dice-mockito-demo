@@ -12,7 +12,7 @@ public class GameTest {
 	Game g;
 	
     @Test
-    public void noWinnerAfter5Attempts() {
+    void noWinnerAfter5Attempts() {
         Dice single = mock(Dice.class);
         when(single.roll()).thenReturn(1);
 
@@ -27,7 +27,7 @@ public class GameTest {
 
 
     @Test
-    public void andTheWinnerIsP1() {
+    void andTheWinnerIsP1() {
 
         Player p1 = mock(Player.class);
         when(p1.getLastValue()).thenReturn(Optional.of(new PlayResult(5)));
@@ -40,7 +40,7 @@ public class GameTest {
     }
     
     @Test
-    public void andTheWinnerIsP2() {
+    void andTheWinnerIsP2() {
 
         Player p1 = mock(Player.class);
         when(p1.getLastValue()).thenReturn(Optional.of(new PlayResult(1)));
